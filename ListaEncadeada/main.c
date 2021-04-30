@@ -4,40 +4,59 @@
 
 int main(void) {
   
-  TLista *lista01 = CriarLista();
-  TLista *lista02 = CriarLista();
+  int op, num;
+  TLista *lista = NULL;
+  do{
+    printf("1 - Criar Lista\n");
+    printf("2 - Adicionar Elemento no Inicio\n");
+    printf("3 - Adicionar Elemento no Final\n");
+    printf("4 - Remover no Inicio\n");
+    printf("5 - Remover no Final\n");
+    printf("6 - Imprimir Lista\n");
+    printf("0 - Sair\n");
+    printf("Digite uma opção: ");  
+    scanf("%d", &op);
+    switch (op)
+    {
+      case 1:
+            system("clear");
+            lista = CriarLista();
+            printf("Lista Criada com Sucesso\n\n");
+      break;
+      case 2:
+            printf("Digite um número para inserir na lista: ");
+	          scanf("%d", &num);
+            if(InseriInicio(lista, num) == 1){
+						  printf("Elemento inserido com sucesso\n");
+						}
+      break;
+      case 3:
+            printf("Digite um número para inserir na lista: ");
+	          scanf("%d", &num);
+            if(InserirFinal(lista, num) == 1){
+						  printf("Elemento inserido com sucesso\n");
+						}
+      break;
+      case 4:
+            if(RemoveInicio(lista) == 1){
+						  printf("Elemento removido com sucesso\n");
+						}
+      break;
+      case 5:
+            if(RemoveFinal(lista) == 1){
+						  printf("Elemento removido com sucesso");
+						}
+      break;
+      case 6:
+            imprimirLista(lista);
+      break;
+    }
 
-  InseriInicio(lista01, 9);
-  InseriInicio(lista01, 8);
-  InseriInicio(lista01, 3);
-  InseriInicio(lista01, 6);
-  imprimirLista(lista01);
+
+  }while(op != 0);
 
 
-  // 6 -> 3 -> 8 -> 9
-  if(RemoveFinal(lista01) == 1){
-    printf("Elemento do Final removido com sucesso\n");
-    imprimirLista(lista01);
-  }
-   if(RemoveFinal(lista01) == 1){
-    printf("Elemento do Final removido com sucesso\n");
-    imprimirLista(lista01);
-  }
-
-   if(RemoveFinal(lista01) == 1){
-    printf("Elemento do Final removido com sucesso\n");
-    imprimirLista(lista01);
-  }
-
-  if(RemoveFinal(lista01) == 1){
-    printf("Elemento do Final removido com sucesso\n");
-    imprimirLista(lista01);
-  }
-
-
-
-  InseriInicio(lista01, 6000);
-  imprimirLista(lista01);
+  
  
   return 0;
 }

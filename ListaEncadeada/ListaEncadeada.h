@@ -14,3 +14,4 @@ int InseriInicio(TLista *lista, int infoEntrada);
 void imprimirLista(TLista *lista);
 int RemoveInicio(TLista *lista);
 int RemoveFinal(TLista *lista);
+int InserirFinal(TLista *lista, int infoEntrada);

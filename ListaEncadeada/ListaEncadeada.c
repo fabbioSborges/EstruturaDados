@@ -17,7 +17,15 @@ TLista* CriarLista(){
 }
 
 int InseriInicio(TLista *lista, int infoEntrada){
+  if(lista == NULL){
+		printf("Lista não foi criada, impossivel inserir");
+    return 0;
+  }
   TNo *novoNo = (TNo*) malloc(sizeof(TNo));
+  if(novoNo == NULL){
+	  printf("Novo elemento não foi criado!");
+		return 0;
+  }
   novoNo->info = infoEntrada;
   //if(lista->tamanho == 0){
   if(lista->prim == NULL){ //lista vazia
@@ -48,11 +56,11 @@ void imprimirLista(TLista *lista){
 
 int RemoveInicio(TLista *lista){
   if (lista == NULL){
-    printf("lista não foi criada");
+    printf("lista não foi criada\n");
     return 0;
   }
   if(lista->prim == NULL){
-    printf("impossivel remover em uma lista vazia");
+    printf("impossivel remover em uma lista vazia\n");
     return 0;
   }
   TNo *NoRemove = lista->prim;
@@ -64,11 +72,11 @@ int RemoveInicio(TLista *lista){
 
 int RemoveFinal(TLista *lista){
   if (lista == NULL){
-    printf("lista não foi criada");
+    printf("lista não foi criada\n");
     return 0;
   }
   if(lista->prim == NULL){
-    printf("impossivel remover em uma lista vazia");
+    printf("impossivel remover em uma lista vazia\n");
     return 0;
   }
   TNo *remove = lista->prim;
@@ -88,4 +96,32 @@ int RemoveFinal(TLista *lista){
   free(remove);
 
   return 1;
+}
+
+int InserirFinal(TLista *lista, int infoEntrada){
+  if(lista == NULL){
+		printf("Lista não foi criada, impossivel inserir\n");
+    return 0;
+  }
+  TNo *novoNo = (TNo*) malloc(sizeof(TNo));
+  if(novoNo == NULL){
+	  printf("Novo elemento não foi criado!\n");
+		return 0;
+  }
+	
+  novoNo->info = infoEntrada;
+  
+  if(lista->prim == NULL){ //lista vazia
+    lista->prim = novoNo;
+    lista->fim = novoNo;
+    lista->tamanho = lista->tamanho + 1;
+    novoNo->prox = NULL;
+    return 1;
+  }else{
+    lista->fim->prox = novoNo;
+    novoNo->prox = NULL;
+    lista->fim = novoNo;
+    return 1;
+  }
+
 }
