@@ -1,2 +1,2 @@
 language = "c"
-run = "clang-7 -pthread -lm -o main ListaEncadeada/ListaEncadeada.c ListaEncadeada/main.c"
+run = "clang-7 -pthread -lm -o main ListaDuplamenteEncadeada/listaDuplamente.c ListaDuplamenteEncadeada/main.c"
