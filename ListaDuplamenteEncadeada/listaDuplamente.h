@@ -13,4 +13,6 @@ TListaDuplamente* CriarLista();
 int InserirInicio(TListaDuplamente* lista, int informacao);
 int InserirFim(TListaDuplamente* lista, int informacao);
 int InserirMeio(TListaDuplamente* lista, int informacao, int posicao);
+int RemoveInicio(TListaDuplamente* lista);
+int RemoveFim(TListaDuplamente* lista);
 void imprimri(TListaDuplamente* lista); 

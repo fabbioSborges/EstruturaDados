@@ -25,6 +25,7 @@ int main(void) {
             printf("Lista Criada com Sucesso\n\n");
       break;
       case 2:
+            system("clear");
             printf("Digite um número para inserir na lista: ");
 	          scanf("%d", &num);
             if(InserirInicio(lista, num) == 1){
@@ -32,6 +33,7 @@ int main(void) {
 						}
       break;
       case 3:
+            system("clear");
             printf("Digite um número para inserir na lista: ");
 	          scanf("%d", &num);
             if(InserirFim(lista, num) == 1){
@@ -39,24 +41,30 @@ int main(void) {
 						}
       break;
       case 4:
-            //if(RemoveInicio(lista) == 1){
-						//  printf("Elemento removido com sucesso\n");
-						//}
+            system("clear");
+            if(RemoveInicio(lista) == 1){
+						  printf("Elemento removido com sucesso\n");
+						}
       break;
       case 5:
-            //if(RemoveFinal(lista) == 1){
-						//  printf("Elemento removido com sucesso");
-						//}
+            system("clear");
+            if(RemoveFim(lista) == 1){
+						  printf("Elemento removido com sucesso");
+						}
       break;
       case 6:
+            system("clear");
             imprimri(lista);
       break;
       case 7:
+            system("clear");
             printf("Digite um número para inserir na lista: ");
 	          scanf("%d", &num);
             printf("Digite a posição para  inserir : ");
 	          scanf("%d", &posicao);
-            imprimri(lista);
+            if(InserirMeio(lista, num, posicao) == 1){
+						  printf("Elemento inserido com sucesso\n");
+						}
       break;
     }
 
