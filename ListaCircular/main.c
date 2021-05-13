@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "listaDuplamente.h"
+#include "listaCircular.h"
 
 int main(void) {
   
   int op, num, posicao;
-  TListaDuplamente *lista = NULL;
+  TListaCircular *lista = NULL;
   do{
     printf("1 - Criar Lista\n");
     printf("2 - Adicionar Elemento no Inicio\n");
@@ -36,25 +36,25 @@ int main(void) {
             system("clear");
             printf("Digite um número para inserir na lista: ");
 	          scanf("%d", &num);
-            if(InserirFim(lista, num) == 1){
+            /* if(InserirFim(lista, num) == 1){
 						  printf("Elemento inserido com sucesso\n");
-						}
+						} */
       break;
       case 4:
             system("clear");
-            if(RemoveInicio(lista) == 1){
+            /* if(RemoveInicio(lista) == 1){
 						  printf("Elemento removido com sucesso\n");
-						}
+						} */
       break;
       case 5:
             system("clear");
-            if(RemoveFim(lista) == 1){
+            /* if(RemoveFim(lista) == 1){
 						  printf("Elemento removido com sucesso");
-						}
+						} */
       break;
       case 6:
             system("clear");
-            imprimri(lista);
+            imprimi(lista);
       break;
       case 7:
             system("clear");
@@ -62,9 +62,9 @@ int main(void) {
 	          scanf("%d", &num);
             printf("Digite a posição para  inserir : ");
 	          scanf("%d", &posicao);
-            if(InserirMeio(lista, num, posicao) == 1){
+            /* if(InserirMeio(lista, num, posicao) == 1){
 						  printf("Elemento inserido com sucesso\n");
-						}
+						} */
       break;
     }
 
