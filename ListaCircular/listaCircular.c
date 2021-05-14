@@ -34,6 +34,8 @@ int InserirInicio(TListaCircular *lista, int elemento){
 		novoNo->prox = lista->prim;
 		lista->prim = novoNo;
 		return 1;
+
+		lista->tamanho++;
 	}
 	return 1;
 }
@@ -48,5 +50,51 @@ void imprimi(TListaCircular *lista){
 	}
 	printf("Elemento[%d] : %d\n", i, aux->elem);
 	
+
+}
+
+int RemoveInicio(TListaCircular *lista){
+	if(lista->prim == NULL){
+		return 0;
+	}
+	if(lista->prim->prox == lista->prim){
+		free(lista->prim);
+		lista->prim = NULL;
+		lista->tamanho--;
+		return 1;
+	}else{
+		TNo *aux = lista->prim;
+		while(aux->prox != lista->prim){
+   		aux = aux->prox;
+		}
+		TNo *remove = lista->prim;
+		aux->prox = remove->prox;
+		lista->prim = remove->prox;
+		free(remove);
+		return 1;
+	}
+
+}
+
+int RemoveFim(TListaCircular *lista){
+	if(lista->prim == NULL){
+		return 0;
+	}
+	if(lista->prim->prox == lista->prim){
+		free(lista->prim);
+		lista->prim = NULL;
+		lista->tamanho--;
+		return 1;
+	}else{
+		TNo *remove = lista->prim;
+		TNo *anterior;
+		while(remove->prox != lista->prim){
+			anterior = remove;
+   		remove = remove->prox;
+		}
+		anterior->prox = remove->prox;
+		free(remove);
+		return 1;
+	}
 
 }

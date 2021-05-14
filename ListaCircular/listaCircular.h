@@ -12,3 +12,5 @@ typedef struct{
 TListaCircular* CriarLista();
 int InserirInicio(TListaCircular *lista, int elemento);
 void imprimi(TListaCircular *lista);
+int RemoveInicio(TListaCircular *lista);
+int RemoveFim(TListaCircular *lista);

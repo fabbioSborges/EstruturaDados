@@ -15,4 +15,6 @@ int InserirFim(TListaDuplamente* lista, int informacao);
 int InserirMeio(TListaDuplamente* lista, int informacao, int posicao);
 int RemoveInicio(TListaDuplamente* lista);
 int RemoveFim(TListaDuplamente* lista);
-void imprimri(TListaDuplamente* lista); 
+void imprimi(TListaDuplamente* lista); 
+int iverte(TListaDuplamente *lista1, TListaDuplamente *lista2);
+TListaDuplamente *impar(TListaDuplamente *lista);

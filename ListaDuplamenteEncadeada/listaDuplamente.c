@@ -38,7 +38,7 @@ int InserirInicio(TListaDuplamente* lista, int informacao){
   return 0;
 }
 
-void imprimri(TListaDuplamente* lista){
+void imprimi(TListaDuplamente* lista){
 	TNo *aux = lista->prim;
 	int cont = 0;
 	while(aux != NULL){
@@ -141,4 +141,28 @@ int RemoveFim(TListaDuplamente* lista){
 	}
 	free(remove);
 	return 1;
+}
+
+int iverte(TListaDuplamente *lista1, TListaDuplamente *lista2){
+	TNo *aux = lista1->prim;
+	while(aux != NULL){
+		InserirInicio(lista2, aux->info);
+		aux = aux->prox;
+	}
+	imprimi(lista2);
+	return 1;
+}
+
+TListaDuplamente *impar(TListaDuplamente *lista){
+	TListaDuplamente *listaImpares = CriarLista();
+	TNo *aux = lista->prim;
+	int indice = 0;
+	while(aux != NULL){
+		if((indice%2) != 0){
+			InserirFim(listaImpares, aux->info);
+		}
+		indice++;
+		aux = aux->prox;
+	}
+	return listaImpares;
 }

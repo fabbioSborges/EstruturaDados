@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "listaCircular.h"
+#include "listaDuplamente.h"
 
 int main(void) {
   
   int op, num, posicao;
-	TNo *aux;
-  TListaCircular *lista = NULL;
+  TListaDuplamente *lista = NULL;
+	TListaDuplamente *lista2;
   do{
     printf("1 - Criar Lista\n");
     printf("2 - Adicionar Elemento no Inicio\n");
@@ -15,6 +15,8 @@ int main(void) {
     printf("5 - Remover no Final\n");
     printf("6 - Imprimir Lista\n");
     printf("7 - Inserir no meio\n");
+    printf("8 - Inverter Lista\n");
+    printf("9 - Impares\n");
     printf("0 - Sair\n");
     printf("Digite uma opção: ");  
     scanf("%d", &op);
@@ -37,19 +39,16 @@ int main(void) {
             system("clear");
             printf("Digite um número para inserir na lista: ");
 	          scanf("%d", &num);
-            /* if(InserirFim(lista, num) == 1){
+            if(InserirFim(lista, num) == 1){
 						  printf("Elemento inserido com sucesso\n");
-						} */
+						}
       break;
       case 4:
-						aux = lista->prim;
-						printf("Primeiro valor: %d\n", aux->elem);
-            system("clear");
+						system("clear");
              if(RemoveInicio(lista) == 1){
 						  printf("Elemento removido com sucesso\n");
 						}
 
-						printf("Primeiro valor: %d\n", aux->elem);
       break;
       case 5:
             system("clear");
@@ -67,9 +66,21 @@ int main(void) {
 	          scanf("%d", &num);
             printf("Digite a posição para  inserir : ");
 	          scanf("%d", &posicao);
-            /* if(InserirMeio(lista, num, posicao) == 1){
+            if(InserirMeio(lista, num, posicao) == 1){
 						  printf("Elemento inserido com sucesso\n");
-						} */
+						}
+      break;
+      case 8:
+            system("clear");
+            lista2 = CriarLista();
+						iverte(lista, lista2);
+      break;
+      case 9:
+            system("clear");
+            lista2 = impar(lista);
+            imprimi(lista);
+						printf("\n\n");
+            imprimi(lista2);
       break;
     }
 
