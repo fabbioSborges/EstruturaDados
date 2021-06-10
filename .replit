@@ -1,2 +1,2 @@
 language = "c"
-run = "clang-7 -pthread -lm -o main PilhaDinamica/pilha.c PilhaDinamica/main.c"
+run = "clang-7 -pthread -lm -o main ArvoreBinariaBusca/arvore.c ArvoreBinariaBusca/main.c"
